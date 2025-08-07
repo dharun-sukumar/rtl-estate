@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PrimeEstate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-header {
+            background: var(--bg-white);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .data-table {
+            background: var(--bg-white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .table-header {
+            background: var(--bg-light);
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .table-content {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        tr:hover {
+            background: var(--bg-light);
+        }
+        
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .status-active { background: var(--success-color); color: white; }
+        .status-pending { background: var(--warning-color); color: white; }
+        .status-inactive { background: var(--error-color); color: white; }
+        
+        .chart-container {
+            background: var(--bg-white);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+        }
+        
+        .tab-navigation {
+            display: flex;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+        
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: -2px;
+        }
+        
+        .tab-panel {
+            display: none;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    🏡 PrimeEstate Admin
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
+                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Dashboard <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">🔐 Login</a>
+                            <a href="index.html" class="dropdown-item">🚪 Exit Admin</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="dashboard-sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#overview" class="active">📊 Overview</a></li>
+                <li><a href="#properties">🏠 Properties</a></li>
+                <li><a href="#users">👥 Users</a></li>
+                <li><a href="#agents">👨‍💼 Agents</a></li>
+                <li><a href="#inquiries">💬 Inquiries</a></li>
+                <li><a href="#transactions">💰 Transactions</a></li>
+                <li><a href="#reports">📈 Reports</a></li>
+                <li><a href="#settings">⚙️ Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-header">
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Welcome back, Administrator! Here's your business overview.</p>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <a href="#" class="action-btn btn-primary">+ Add Property</a>
+                <a href="#" class="action-btn btn-secondary">+ Add Agent</a>
+                <a href="#" class="action-btn btn-accent">Generate Report</a>
+                <a href="#" class="action-btn btn-secondary">Backup Data</a>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="stats-grid mb-4">
+                <div class="stat-card">
+                    <div class="stat-number">247</div>
+                    <div class="stat-label">Total Properties</div>
+                    <div style="color: var(--success-color); font-size: 0.9rem; margin-top: 0.5rem;">+12 this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,432</div>
+                    <div class="stat-label">Active Users</div>
+                    <div style="color: var(--success-color); font-size: 0.9rem; margin-top: 0.5rem;">+85 this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$2.4M</div>
+                    <div class="stat-label">Monthly Revenue</div>
+                    <div style="color: var(--success-color); font-size: 0.9rem; margin-top: 0.5rem;">+18% this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">156</div>
+                    <div class="stat-label">Pending Inquiries</div>
+                    <div style="color: var(--warning-color); font-size: 0.9rem; margin-top: 0.5rem;">Needs attention</div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+                <button class="tab-btn" onclick="showTab('properties')">Properties</button>
+                <button class="tab-btn" onclick="showTab('users')">Users</button>
+                <button class="tab-btn" onclick="showTab('reports')">Reports</button>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-panel active">
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                    <div class="chart-container">
+                        <div style="text-align: center;">
+                            <h3>Sales Analytics</h3>
+                            <p>Chart visualization would be displayed here<br>(Integration with Chart.js or similar library)</p>
+                        </div>
+                    </div>
+                    <div class="data-table">
+                        <div class="table-header">
+                            <h4>Recent Activities</h4>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <div style="margin-bottom: 1rem;">
+                                <strong>New property listed</strong><br>
+                                <small style="color: var(--text-light);">Modern Villa - Beverly Hills</small><br>
+                                <small style="color: var(--text-light);">2 hours ago</small>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>User registered</strong><br>
+                                <small style="color: var(--text-light);">John Smith - Premium account</small><br>
+                                <small style="color: var(--text-light);">4 hours ago</small>
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <strong>Property sold</strong><br>
+                                <small style="color: var(--text-light);">Downtown Penthouse - $1.2M</small><br>
+                                <small style="color: var(--text-light);">6 hours ago</small>
+                            </div>
+                            <div>
+                                <strong>New inquiry</strong><br>
+                                <small style="color: var(--text-light);">Interest in Luxury Estate</small><br>
+                                <small style="color: var(--text-light);">8 hours ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Properties Tab -->
+            <div id="properties" class="tab-panel">
+                <div class="data-table">
+                    <div class="table-header">
+                        <h4>Property Management</h4>
+                        <button class="btn btn-primary">Add New Property</button>
+                    </div>
+                    <div class="table-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Property ID</th>
+                                    <th>Title</th>
+                                    <th>Location</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Views</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#P001</td>
+                                    <td>Modern Luxury Villa</td>
+                                    <td>Beverly Hills, CA</td>
+                                    <td>$850,000</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>1,247</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#P002</td>
+                                    <td>Downtown Penthouse</td>
+                                    <td>Manhattan, NY</td>
+                                    <td>$3,200/month</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>892</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#P003</td>
+                                    <td>Beachfront Mansion</td>
+                                    <td>Malibu, CA</td>
+                                    <td>$2,500,000</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td>2,156</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#P004</td>
+                                    <td>Suburban Family Home</td>
+                                    <td>Austin, TX</td>
+                                    <td>$425,000</td>
+                                    <td><span class="status-badge status-inactive">Sold</span></td>
+                                    <td>645</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Tab -->
+            <div id="users" class="tab-panel">
+                <div class="data-table">
+                    <div class="table-header">
+                        <h4>User Management</h4>
+                        <button class="btn btn-primary">Add New User</button>
+                    </div>
+                    <div class="table-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#U001</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>sarah@example.com</td>
+                                    <td>Agent</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>2023-01-15</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#U002</td>
+                                    <td>Michael Chen</td>
+                                    <td>michael@example.com</td>
+                                    <td>Client</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td>2023-02-20</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#U003</td>
+                                    <td>Emma Rodriguez</td>
+                                    <td>emma@example.com</td>
+                                    <td>Agent</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td>2023-03-10</td>
+                                    <td>
+                                        <button class="btn" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">Edit</button>
+                                        <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem;">View</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div id="reports" class="tab-panel">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Monthly Sales Report</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Generate comprehensive monthly sales analysis including property performance, agent statistics, and revenue metrics.</p>
+                            <button class="btn btn-primary w-full mt-2">Generate Report</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Property Analytics</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Detailed analytics on property views, inquiries, and conversion rates to optimize marketing strategies.</p>
+                            <button class="btn btn-primary w-full mt-2">Generate Report</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Agent Performance</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Track agent productivity, sales volume, and client satisfaction ratings to improve team performance.</p>
+                            <button class="btn btn-primary w-full mt-2">Generate Report</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Financial Summary</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>Complete financial overview including commissions, expenses, and profit margins for business planning.</p>
+                            <button class="btn btn-primary w-full mt-2">Generate Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+    <script>
+        function showTab(tabName) {
+            // Remove active class from all tabs and panels
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding panel
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+        
+        // Sidebar navigation
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all sidebar links
+                document.querySelectorAll('.sidebar-nav a').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // You could add additional logic here to show different content sections
+            });
+        });
+    </script>
+</body>
+</html>

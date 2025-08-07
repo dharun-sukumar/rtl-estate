@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - PrimeEstate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-content {
+            max-width: 600px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .error-number {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            right: 30%;
+            animation-delay: 1s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+        
+        .search-suggestion {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .suggestion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .suggestion-item {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-white);
+            transition: var(--transition);
+        }
+        
+        .suggestion-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .error-number {
+                font-size: 5rem;
+            }
+            
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1.1rem;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+            
+            .error-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    🏡 PrimeEstate
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
+                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Dashboard <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">🔐 Login</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Error Container -->
+    <div class="error-container">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <div class="error-content">
+            <div class="error-number">404</div>
+            <h1 class="error-title">Property Not Found</h1>
+            <p class="error-message">
+                Oops! The page you're looking for seems to have moved to a new address. 
+                Don't worry, we'll help you find what you're searching for.
+            </p>
+            
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-accent">🏠 Go Home</a>
+                <a href="property-details.html" class="btn btn-secondary">🔍 Browse Properties</a>
+                <a href="contact.html" class="btn btn-secondary">💬 Contact Us</a>
+            </div>
+            
+            <div class="search-suggestion">
+                <h3>Popular Destinations</h3>
+                <p>Here are some popular pages you might be looking for:</p>
+                <div class="suggestion-grid">
+                    <a href="index.html" class="suggestion-item">
+                        <strong>🏠 Home</strong><br>
+                        <small>Browse featured properties</small>
+                    </a>
+                    <a href="property-details.html" class="suggestion-item">
+                        <strong>🏘️ Properties</strong><br>
+                        <small>All available listings</small>
+                    </a>
+                    <a href="about.html" class="suggestion-item">
+                        <strong>👥 About Us</strong><br>
+                        <small>Our story and team</small>
+                    </a>
+                    <a href="contact.html" class="suggestion-item">
+                        <strong>📞 Contact</strong><br>
+                        <small>Get in touch with us</small>
+                    </a>
+                    <a href="login.html" class="suggestion-item">
+                        <strong>🔐 Login</strong><br>
+                        <small>Access your account</small>
+                    </a>
+                    <a href="user-dashboard.html" class="suggestion-item">
+                        <strong>📊 Dashboard</strong><br>
+                        <small>Your saved properties</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+    <script>
+        // Add some interactive behavior
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate the 404 number on load
+            const errorNumber = document.querySelector('.error-number');
+            errorNumber.style.transform = 'scale(0)';
+            errorNumber.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            
+            setTimeout(() => {
+                errorNumber.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Add click effect to suggestion items
+            document.querySelectorAll('.suggestion-item').forEach(item => {
+                item.addEventListener('click', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-2px)';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

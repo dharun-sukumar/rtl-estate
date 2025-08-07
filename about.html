@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - PrimeEstate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    🏡 PrimeEstate
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
+                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Dashboard <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">🔐 Login</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 120px 0 80px;">
+        <div class="container">
+            <div class="hero-content">
+                <h1>About PrimeEstate</h1>
+                <p>25+ years of excellence in premium real estate services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="py-4">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
+                <div>
+                    <h2>Our Story</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Founded in 1999, PrimeEstate has been at the forefront of luxury real estate, 
+                        helping thousands of clients find their perfect homes and investment properties. 
+                        Our commitment to excellence, integrity, and personalized service has made us 
+                        the trusted choice for discerning buyers and sellers.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        We combine deep market knowledge with cutting-edge technology to deliver 
+                        exceptional results. Our team of expert agents brings decades of experience 
+                        and a passion for helping clients achieve their real estate goals.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Our Team" style="width: 100%; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg);">
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="text-center mb-4">
+                <h2>Our Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+
+            <div class="property-grid">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                        <h4>Excellence</h4>
+                        <p>We strive for perfection in every transaction, ensuring our clients receive the highest quality service and results.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
+                        <h4>Integrity</h4>
+                        <p>Honest, transparent communication and ethical practices form the foundation of all our client relationships.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
+                        <h4>Innovation</h4>
+                        <p>We embrace the latest technology and marketing strategies to provide our clients with a competitive advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-4" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Meet Our Team</h2>
+                <p>Expert professionals dedicated to your success</p>
+            </div>
+
+            <div class="property-grid">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Sarah Johnson" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem;">
+                        <h4>Sarah Johnson</h4>
+                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">Senior Real Estate Agent</p>
+                        <p>15+ years experience in luxury residential sales. Top performer with over $200M in transactions.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><strong>📞</strong> (555) 123-4567</p>
+                            <p><strong>✉️</strong> sarah@primeestate.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Michael Chen" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem;">
+                        <h4>Michael Chen</h4>
+                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">Investment Specialist</p>
+                        <p>Expert in commercial and investment properties. Helped clients build portfolios worth over $500M.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><strong>📞</strong> (555) 123-4568</p>
+                            <p><strong>✉️</strong> michael@primeestate.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Emma Rodriguez" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem;">
+                        <h4>Emma Rodriguez</h4>
+                        <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 1rem;">Luxury Home Specialist</p>
+                        <p>Specializes in high-end residential properties. Known for exceptional client service and market expertise.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><strong>📞</strong> (555) 123-4569</p>
+                            <p><strong>✉️</strong> emma@primeestate.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="py-4">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2>Awards & Recognition</h2>
+                <p>Industry recognition for our outstanding service</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🏆</div>
+                    <div class="stat-number">2024</div>
+                    <div class="stat-label">Top Real Estate Agency Award</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">⭐</div>
+                    <div class="stat-number">5.0</div>
+                    <div class="stat-label">Average Client Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🥇</div>
+                    <div class="stat-number">#1</div>
+                    <div class="stat-label">Luxury Sales in Region</div>
+                </div>
+                <div class="stat-card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎖️</div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-4" style="background: var(--primary-color); color: var(--text-white);">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: 2rem;">Our Mission</h2>
+            <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9;">
+                To provide exceptional real estate services that exceed our clients' expectations, 
+                helping them achieve their property goals while building lasting relationships based 
+                on trust, expertise, and results.
+            </p>
+            <a href="contact.html" class="btn btn-accent">Work With Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PrimeEstate</h4>
+                    <p>Your trusted partner in finding the perfect property. We provide premium real estate services with a focus on quality and customer satisfaction.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="property-details.html">Properties</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Rentals</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Investment Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@primeestate.com</p>
+                    <p>📍 123 Real Estate Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrimeEstate. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

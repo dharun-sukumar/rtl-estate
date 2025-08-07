@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeEstate - Premium Real Estate Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    🏡 PrimeEstate
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
+                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Dashboard <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">🔐 Login</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page Switcher -->
+    <div class="home-switcher">
+        <div class="home-switch-btn active" title="Classic Design"></div>
+        <div class="home-switch-btn" title="Modern Design"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Dream Home</h1>
+                <p>Discover premium properties in the most desirable locations with our expert real estate services</p>
+                <div class="hero-buttons">
+                    <a href="property-details.html" class="btn btn-primary">Browse Properties</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="py-4">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="search-form">
+                        <div class="form-group">
+                            <input type="text" id="propertySearch" class="form-control" placeholder="Search properties by location or title...">
+                        </div>
+                        <div class="filter-buttons text-center mt-3">
+                            <button class="btn btn-secondary filter-btn active" data-filter="all">All</button>
+                            <button class="btn btn-secondary filter-btn" data-filter="sale">For Sale</button>
+                            <button class="btn btn-secondary filter-btn" data-filter="rent">For Rent</button>
+                            <button class="btn btn-secondary filter-btn" data-filter="luxury">Luxury</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="py-4">
+        <div class="container">
+            <h2 class="text-center mb-4">Featured Properties</h2>
+            <div class="property-grid">
+                <!-- Property 1 -->
+                <div class="property-card" data-category="sale">
+                    <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern Villa" class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">$850,000</div>
+                        <h3 class="property-title">Modern Luxury Villa</h3>
+                        <div class="property-location">
+                            📍 Beverly Hills, CA
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">🛏️ 4 Beds</span>
+                            <span class="feature">🚿 3 Baths</span>
+                            <span class="feature">📐 2,400 sq ft</span>
+                        </div>
+                        <a href="property-details.html" class="btn btn-primary w-full">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card" data-category="rent">
+                    <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Downtown Apartment" class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">$3,200/month</div>
+                        <h3 class="property-title">Downtown Penthouse</h3>
+                        <div class="property-location">
+                            📍 Manhattan, NY
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">🛏️ 2 Beds</span>
+                            <span class="feature">🚿 2 Baths</span>
+                            <span class="feature">📐 1,800 sq ft</span>
+                        </div>
+                        <a href="property-details.html" class="btn btn-primary w-full">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" data-category="luxury">
+                    <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Beachfront Mansion" class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">$2,500,000</div>
+                        <h3 class="property-title">Beachfront Mansion</h3>
+                        <div class="property-location">
+                            📍 Malibu, CA
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">🛏️ 6 Beds</span>
+                            <span class="feature">🚿 5 Baths</span>
+                            <span class="feature">📐 4,200 sq ft</span>
+                        </div>
+                        <a href="property-details.html" class="btn btn-primary w-full">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property 4 -->
+                <div class="property-card" data-category="sale">
+                    <img src="https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Family Home" class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">$425,000</div>
+                        <h3 class="property-title">Suburban Family Home</h3>
+                        <div class="property-location">
+                            📍 Austin, TX
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">🛏️ 3 Beds</span>
+                            <span class="feature">🚿 2 Baths</span>
+                            <span class="feature">📐 1,900 sq ft</span>
+                        </div>
+                        <a href="property-details.html" class="btn btn-primary w-full">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property 5 -->
+                <div class="property-card" data-category="rent">
+                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Studio Loft" class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">$1,800/month</div>
+                        <h3 class="property-title">Modern Studio Loft</h3>
+                        <div class="property-location">
+                            📍 Seattle, WA
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">🛏️ 1 Bed</span>
+                            <span class="feature">🚿 1 Bath</span>
+                            <span class="feature">📐 850 sq ft</span>
+                        </div>
+                        <a href="property-details.html" class="btn btn-primary w-full">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Property 6 -->
+                <div class="property-card" data-category="luxury">
+                    <img src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Luxury Condo" class="property-image">
+                    <div class="property-info">
+                        <div class="property-price">$1,200,000</div>
+                        <h3 class="property-title">Luxury High-Rise Condo</h3>
+                        <div class="property-location">
+                            📍 Miami, FL
+                        </div>
+                        <div class="property-features">
+                            <span class="feature">🛏️ 3 Beds</span>
+                            <span class="feature">🚿 3 Baths</span>
+                            <span class="feature">📐 2,100 sq ft</span>
+                        </div>
+                        <a href="property-details.html" class="btn btn-primary w-full">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-4" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Properties Sold</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Expert Agents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-4">
+        <div class="container text-center">
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2>Ready to Find Your Dream Home?</h2>
+                    <p class="mb-4">Let our expert team help you find the perfect property that matches your needs and budget.</p>
+                    <div class="flex gap-4 justify-center">
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                        <a href="about.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PrimeEstate</h4>
+                    <p>Your trusted partner in finding the perfect property. We provide premium real estate services with a focus on quality and customer satisfaction.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="property-details.html">Properties</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Rentals</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Investment Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@primeestate.com</p>
+                    <p>📍 123 Real Estate Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrimeEstate. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+</body>
+</html>

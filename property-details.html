@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - PrimeEstate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .property-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            height: 500px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .thumbnail-grid {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        .property-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .property-info-section {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .contact-agent-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .agent-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .agent-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+        }
+        
+        .similar-properties {
+            margin-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            .property-gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            .thumbnail-grid {
+                grid-template-rows: none;
+                grid-template-columns: repeat(2, 1fr);
+                height: 200px;
+            }
+            
+            .property-details-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-agent-card {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    🏡 PrimeEstate
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
+                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Dashboard <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">🔐 Login</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Property Details Section -->
+    <section style="padding-top: 120px;">
+        <div class="container">
+            <!-- Property Gallery -->
+            <div class="property-gallery">
+                <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Main Property Image" class="main-image" id="mainImage">
+                <div class="thumbnail-grid">
+                    <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Property View 2" class="thumbnail" onclick="changeMainImage(this.src)">
+                    <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Property View 3" class="thumbnail" onclick="changeMainImage(this.src)">
+                </div>
+            </div>
+
+            <!-- Property Information -->
+            <div class="property-details-grid">
+                <div>
+                    <div class="property-info-section">
+                        <div class="property-price" style="font-size: 2.5rem; margin-bottom: 1rem;">$850,000</div>
+                        <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Modern Luxury Villa</h1>
+                        <div class="property-location" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                            📍 Beverly Hills, CA 90210
+                        </div>
+                        
+                        <div class="property-features" style="margin-bottom: 2rem;">
+                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;">🛏️ 4 Bedrooms</span>
+                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;">🚿 3 Bathrooms</span>
+                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;">📐 2,400 sq ft</span>
+                            <span class="feature" style="font-size: 1.1rem;">🚗 2 Car Garage</span>
+                        </div>
+
+                        <h3>Property Description</h3>
+                        <p style="line-height: 1.8; margin-bottom: 2rem;">
+                            This stunning modern luxury villa offers the perfect blend of contemporary design and comfortable living. 
+                            Located in the prestigious Beverly Hills neighborhood, this property features an open-concept layout, 
+                            high-end finishes, and breathtaking views. The gourmet kitchen boasts top-of-the-line appliances, 
+                            while the master suite includes a spa-like bathroom and walk-in closet. The outdoor space features 
+                            a beautiful pool and entertaining area perfect for California living.
+                        </p>
+
+                        <h3>Key Features</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span>🏊</span>
+                                <span>Swimming Pool</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>🌳</span>
+                                <span>Garden & Landscaping</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>🔥</span>
+                                <span>Fireplace</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>❄️</span>
+                                <span>Central Air Conditioning</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>🏃</span>
+                                <span>Gym/Fitness Room</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>🍳</span>
+                                <span>Gourmet Kitchen</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>🛡️</span>
+                                <span>Security System</span>
+                            </div>
+                            <div class="feature-item">
+                                <span>📶</span>
+                                <span>Smart Home Features</span>
+                            </div>
+                        </div>
+
+                        <h3>Neighborhood Information</h3>
+                        <p>
+                            Beverly Hills is one of the most prestigious and sought-after neighborhoods in Los Angeles. 
+                            Known for its luxury shopping on Rodeo Drive, excellent restaurants, and proximity to 
+                            entertainment industry hubs. The area offers top-rated schools, beautiful parks, and 
+                            easy access to both downtown LA and the beaches.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Contact Agent Card -->
+                <div>
+                    <div class="contact-agent-card">
+                        <h3>Contact Agent</h3>
+                        <div class="agent-profile">
+                            <img src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Agent Photo" class="agent-avatar">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p style="color: var(--text-light); margin: 0;">Senior Real Estate Agent</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <p><strong>📞 Phone:</strong> (555) 123-4567</p>
+                            <p><strong>✉️ Email:</strong> sarah@primeestate.com</p>
+                            <p><strong>⭐ Rating:</strong> 4.9/5 (127 reviews)</p>
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control" rows="4" placeholder="I'm interested in this property..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">Send Message</button>
+                        </form>
+
+                        <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                            <a href="#" class="btn btn-secondary w-full" style="margin-bottom: 0.5rem;">Schedule Viewing</a>
+                            <a href="#" class="btn btn-accent w-full">Request Virtual Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Similar Properties -->
+            <div class="similar-properties">
+                <h2>Similar Properties</h2>
+                <div class="property-grid">
+                    <div class="property-card">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Similar Property 1" class="property-image">
+                        <div class="property-info">
+                            <div class="property-price">$920,000</div>
+                            <h3 class="property-title">Contemporary Villa</h3>
+                            <div class="property-location">📍 West Hollywood, CA</div>
+                            <div class="property-features">
+                                <span class="feature">🛏️ 3 Beds</span>
+                                <span class="feature">🚿 2 Baths</span>
+                                <span class="feature">📐 2,100 sq ft</span>
+                            </div>
+                            <a href="#" class="btn btn-primary w-full">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Similar Property 2" class="property-image">
+                        <div class="property-info">
+                            <div class="property-price">$1,200,000</div>
+                            <h3 class="property-title">Luxury Estate</h3>
+                            <div class="property-location">📍 Bel Air, CA</div>
+                            <div class="property-features">
+                                <span class="feature">🛏️ 5 Beds</span>
+                                <span class="feature">🚿 4 Baths</span>
+                                <span class="feature">📐 3,200 sq ft</span>
+                            </div>
+                            <a href="#" class="btn btn-primary w-full">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="property-card">
+                        <img src="https://images.pexels.com/photos/1642125/pexels-photo-1642125.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Similar Property 3" class="property-image">
+                        <div class="property-info">
+                            <div class="property-price">$750,000</div>
+                            <h3 class="property-title">Modern Family Home</h3>
+                            <div class="property-location">📍 Santa Monica, CA</div>
+                            <div class="property-features">
+                                <span class="feature">🛏️ 4 Beds</span>
+                                <span class="feature">🚿 3 Baths</span>
+                                <span class="feature">📐 2,000 sq ft</span>
+                            </div>
+                            <a href="#" class="btn btn-primary w-full">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PrimeEstate</h4>
+                    <p>Your trusted partner in finding the perfect property. We provide premium real estate services with a focus on quality and customer satisfaction.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="property-details.html">Properties</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Rentals</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Investment Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ info@primeestate.com</p>
+                    <p>📍 123 Real Estate Ave, City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrimeEstate. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+    <script>
+        function changeMainImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+    </script>
+</body>
+</html>

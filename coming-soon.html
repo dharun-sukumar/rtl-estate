@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - PrimeEstate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .coming-soon-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon-content {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .coming-soon-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .coming-soon-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .countdown-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem 1rem;
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .notify-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            margin: 3rem 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .notify-form h3 {
+            margin-bottom: 1rem;
+            color: var(--text-white);
+        }
+        
+        .notify-form p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .email-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .email-input input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-white);
+            font-size: 1rem;
+        }
+        
+        .email-input input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .email-input input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .background-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .bg-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: floatShape 8s ease-in-out infinite;
+        }
+        
+        .bg-shape:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .bg-shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 70%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+        
+        .bg-shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 6s;
+        }
+        
+        .bg-shape:nth-child(4) {
+            width: 180px;
+            height: 180px;
+            top: 40%;
+            right: 5%;
+            animation-delay: 2s;
+        }
+        
+        @keyframes floatShape {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .coming-soon-title {
+                font-size: 2.5rem;
+            }
+            
+            .coming-soon-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .countdown-number {
+                font-size: 2rem;
+            }
+            
+            .email-input {
+                flex-direction: column;
+            }
+            
+            .feature-preview {
+                grid-template-columns: 1fr;
+            }
+            
+            .coming-soon-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    🏡 PrimeEstate
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Home <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
+                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            Dashboard <span class="dropdown-arrow">▼</span>
+                        </a>
+                        <div class="dropdown">
+                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">🔐 Login</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Coming Soon Container -->
+    <div class="coming-soon-container">
+        <div class="background-shapes">
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+            <div class="bg-shape"></div>
+        </div>
+        
+        <div class="coming-soon-content">
+            <h1 class="coming-soon-title">Something Amazing is Coming</h1>
+            <p class="coming-soon-subtitle">We're building the future of real estate. Get ready for an incredible experience!</p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">30</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">12</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">45</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">30</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            
+            <!-- Notification Form -->
+            <div class="notify-form">
+                <h3>Be the First to Know</h3>
+                <p>Join our exclusive list and get notified when we launch!</p>
+                <form id="notifyForm">
+                    <div class="email-input">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-accent">Notify Me</button>
+                    </div>
+                </form>
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 1rem;">
+                    We respect your privacy. No spam, just exciting updates!
+                </p>
+            </div>
+            
+            <!-- Feature Preview -->
+            <div class="feature-preview">
+                <div class="feature-card">
+                    <span class="feature-icon">🤖</span>
+                    <h4 class="feature-title">AI-Powered Search</h4>
+                    <p>Find your perfect property with intelligent recommendations and smart filtering.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🌐</span>
+                    <h4 class="feature-title">Virtual Reality Tours</h4>
+                    <p>Explore properties from anywhere in the world with immersive VR technology.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📱</span>
+                    <h4 class="feature-title">Mobile-First Design</h4>
+                    <p>Seamless experience across all devices with our responsive and intuitive interface.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h4 class="feature-title">Instant Notifications</h4>
+                    <p>Get real-time alerts for new properties matching your preferences.</p>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="#" class="social-link" title="Facebook">📘</a>
+                <a href="#" class="social-link" title="Twitter">🐦</a>
+                <a href="#" class="social-link" title="Instagram">📷</a>
+                <a href="#" class="social-link" title="LinkedIn">💼</a>
+            </div>
+            
+            <!-- Return Home Link -->
+            <div style="margin-top: 3rem;">
+                <a href="index.html" class="btn btn-secondary">← Back to Current Site</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="rtl-toggle.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            // Set target date (30 days from now)
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30);
+            
+            const now = new Date();
+            const timeLeft = targetDate - now;
+            
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            } else {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        
+        // Notification form
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            
+            // Simulate form submission
+            this.innerHTML = `
+                <div style="color: var(--success-color); text-align: center; padding: 1rem;">
+                    <strong>✅ Thank you!</strong><br>
+                    We'll notify you at <strong>${email}</strong> when we launch!
+                </div>
+            `;
+        });
+        
+        // Add animation to feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            observer.observe(card);
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
