@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8y+6b6f6b6f6b6f6b6f6b6f6b6f6b6f6b6" crossorigin="anonymous">
     <style>
         .property-gallery {
             display: grid;
@@ -130,7 +131,7 @@
         <div class="container">
             <div class="navbar-container">
                 <a href="index.html" class="navbar-brand">
-                    🏡 PrimeEstate
+                    <i class="fas fa-home"></i> PrimeEstate
                 </a>
                 
                 <ul class="navbar-nav">
@@ -139,8 +140,8 @@
                             Home <span class="dropdown-arrow">▼</span>
                         </a>
                         <div class="dropdown">
-                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
-                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                            <a href="index.html" class="dropdown-item">Home 1</a>
+                            <a href="index2.html" class="dropdown-item">Home 2</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
@@ -157,13 +158,14 @@
                             <a href="login.html" class="dropdown-item">🔐 Login</a>
                         </div>
                     </li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
                 </ul>
-                
                 <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
                 <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
     </nav>
+
 
     <!-- Property Details Section -->
     <section style="padding-top: 120px;">
@@ -184,67 +186,60 @@
                         <div class="property-price" style="font-size: 2.5rem; margin-bottom: 1rem;">$850,000</div>
                         <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Modern Luxury Villa</h1>
                         <div class="property-location" style="font-size: 1.2rem; margin-bottom: 2rem;">
-                            📍 Beverly Hills, CA 90210
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent-color);"></i> Beverly Hills, CA 90210
                         </div>
                         
                         <div class="property-features" style="margin-bottom: 2rem;">
-                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;">🛏️ 4 Bedrooms</span>
-                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;">🚿 3 Bathrooms</span>
-                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;">📐 2,400 sq ft</span>
-                            <span class="feature" style="font-size: 1.1rem;">🚗 2 Car Garage</span>
+                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;"><i class="fas fa-bed"></i> 4 Bedrooms</span>
+                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;"><i class="fas fa-shower"></i> 3 Bathrooms</span>
+                            <span class="feature" style="font-size: 1.1rem; margin-right: 2rem;"><i class="fas fa-ruler-combined"></i> 2,400 sq ft</span>
+                            <span class="feature" style="font-size: 1.1rem;"><i class="fas fa-car"></i> 2 Car Garage</span>
                         </div>
 
                         <h3>Property Description</h3>
                         <p style="line-height: 1.8; margin-bottom: 2rem;">
-                            This stunning modern luxury villa offers the perfect blend of contemporary design and comfortable living. 
-                            Located in the prestigious Beverly Hills neighborhood, this property features an open-concept layout, 
-                            high-end finishes, and breathtaking views. The gourmet kitchen boasts top-of-the-line appliances, 
-                            while the master suite includes a spa-like bathroom and walk-in closet. The outdoor space features 
-                            a beautiful pool and entertaining area perfect for California living.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.
                         </p>
 
                         <h3>Key Features</h3>
                         <div class="feature-list">
                             <div class="feature-item">
-                                <span>🏊</span>
+                                <span><i class="fas fa-swimming-pool"></i></span>
                                 <span>Swimming Pool</span>
                             </div>
                             <div class="feature-item">
-                                <span>🌳</span>
+                                <span><i class="fas fa-tree"></i></span>
                                 <span>Garden & Landscaping</span>
                             </div>
                             <div class="feature-item">
-                                <span>🔥</span>
+                                <span><i class="fas fa-fire"></i></span>
                                 <span>Fireplace</span>
                             </div>
                             <div class="feature-item">
-                                <span>❄️</span>
+                                <span><i class="fas fa-snowflake"></i></span>
                                 <span>Central Air Conditioning</span>
                             </div>
                             <div class="feature-item">
-                                <span>🏃</span>
+                                <span><i class="fas fa-dumbbell"></i></span>
                                 <span>Gym/Fitness Room</span>
                             </div>
                             <div class="feature-item">
-                                <span>🍳</span>
+                                <span><i class="fas fa-utensils"></i></span>
                                 <span>Gourmet Kitchen</span>
                             </div>
                             <div class="feature-item">
-                                <span>🛡️</span>
+                                <span><i class="fas fa-shield-alt"></i></span>
                                 <span>Security System</span>
                             </div>
                             <div class="feature-item">
-                                <span>📶</span>
+                                <span><i class="fas fa-wifi"></i></span>
                                 <span>Smart Home Features</span>
                             </div>
                         </div>
 
                         <h3>Neighborhood Information</h3>
                         <p>
-                            Beverly Hills is one of the most prestigious and sought-after neighborhoods in Los Angeles. 
-                            Known for its luxury shopping on Rodeo Drive, excellent restaurants, and proximity to 
-                            entertainment industry hubs. The area offers top-rated schools, beautiful parks, and 
-                            easy access to both downtown LA and the beaches.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod. Pellentesque euismod, nisi eu consectetur consectetur.
                         </p>
                     </div>
                 </div>
@@ -258,13 +253,17 @@
                             <div>
                                 <h4>Sarah Johnson</h4>
                                 <p style="color: var(--text-light); margin: 0;">Senior Real Estate Agent</p>
+                                <p style="color: var(--text-light); margin: 0;">Lorem ipsum dolor sit amet.</p>
                             </div>
                         </div>
                         
                         <div style="margin-bottom: 1.5rem;">
-                            <p><strong>📞 Phone:</strong> (555) 123-4567</p>
-                            <p><strong>✉️ Email:</strong> sarah@primeestate.com</p>
+                            <p><strong><i class="fas fa-phone-alt" style="color: var(--accent-color);"></i> Phone:</strong> (555) 123-4567</p>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <p><strong><i class="fas fa-envelope" style="color: var(--accent-color);"></i> Email:</strong> sarah@primeestate.com</p>
+                            <p>Lorem ipsum dolor sit amet.</p>
                             <p><strong>⭐ Rating:</strong> 4.9/5 (127 reviews)</p>
+                            <p>Lorem ipsum dolor sit amet.</p>
                         </div>
 
                         <form>
@@ -304,11 +303,12 @@
                         <div class="property-info">
                             <div class="property-price">$920,000</div>
                             <h3 class="property-title">Contemporary Villa</h3>
-                            <div class="property-location">📍 West Hollywood, CA</div>
+                            <div class="property-location"><i class="fas fa-map-marker-alt"></i> West Hollywood, CA</div>
+                        <p>Lorem ipsum dolor sit amet.</p>
                             <div class="property-features">
-                                <span class="feature">🛏️ 3 Beds</span>
-                                <span class="feature">🚿 2 Baths</span>
-                                <span class="feature">📐 2,100 sq ft</span>
+                                <span class="feature"><i class="fas fa-bed"></i> 3 Beds</span>
+                                <span class="feature"><i class="fas fa-shower"></i> 2 Baths</span>
+                                <span class="feature"><i class="fas fa-ruler-combined"></i> 2,100 sq ft</span>
                             </div>
                             <a href="#" class="btn btn-primary w-full">View Details</a>
                         </div>
@@ -319,11 +319,12 @@
                         <div class="property-info">
                             <div class="property-price">$1,200,000</div>
                             <h3 class="property-title">Luxury Estate</h3>
-                            <div class="property-location">📍 Bel Air, CA</div>
+                            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Bel Air, CA</div>
+                        <p>Lorem ipsum dolor sit amet.</p>
                             <div class="property-features">
-                                <span class="feature">🛏️ 5 Beds</span>
-                                <span class="feature">🚿 4 Baths</span>
-                                <span class="feature">📐 3,200 sq ft</span>
+                                <span class="feature"><i class="fas fa-bed"></i> 5 Beds</span>
+                                <span class="feature"><i class="fas fa-shower"></i> 4 Baths</span>
+                                <span class="feature"><i class="fas fa-ruler-combined"></i> 3,200 sq ft</span>
                             </div>
                             <a href="#" class="btn btn-primary w-full">View Details</a>
                         </div>
@@ -334,11 +335,12 @@
                         <div class="property-info">
                             <div class="property-price">$750,000</div>
                             <h3 class="property-title">Modern Family Home</h3>
-                            <div class="property-location">📍 Santa Monica, CA</div>
+                            <div class="property-location"><i class="fas fa-map-marker-alt"></i> Santa Monica, CA</div>
+                        <p>Lorem ipsum dolor sit amet.</p>
                             <div class="property-features">
-                                <span class="feature">🛏️ 4 Beds</span>
-                                <span class="feature">🚿 3 Baths</span>
-                                <span class="feature">📐 2,000 sq ft</span>
+                                <span class="feature"><i class="fas fa-bed"></i> 4 Beds</span>
+                                <span class="feature"><i class="fas fa-shower"></i> 3 Baths</span>
+                                <span class="feature"><i class="fas fa-ruler-combined"></i> 2,000 sq ft</span>
                             </div>
                             <a href="#" class="btn btn-primary w-full">View Details</a>
                         </div>
@@ -354,7 +356,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>PrimeEstate</h4>
-                    <p>Your trusted partner in finding the perfect property. We provide premium real estate services with a focus on quality and customer satisfaction.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>

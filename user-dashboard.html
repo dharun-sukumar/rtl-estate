@@ -8,14 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="container">
             <div class="navbar-container">
                 <a href="index.html" class="navbar-brand">
-                    🏡 PrimeEstate
+                    <i class="fas fa-home"></i> PrimeEstate
                 </a>
                 
                 <ul class="navbar-nav">
@@ -24,8 +26,8 @@
                             Home <span class="dropdown-arrow">▼</span>
                         </a>
                         <div class="dropdown">
-                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
-                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                            <a href="index.html" class="dropdown-item">Home 1</a>
+                            <a href="index2.html" class="dropdown-item">Home 2</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
@@ -36,21 +38,19 @@
                             Dashboard <span class="dropdown-arrow">▼</span>
                         </a>
                         <div class="dropdown">
-                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
-                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="login.html" class="dropdown-item">🔐 Logout</a>
+                            <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
                         </div>
                     </li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
                 </ul>
-                
                 <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
                 <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
     </nav>
 
-    <!-- Dashboard -->
+    <!-- Dashboard -->  
     <div class="dashboard">
         <div class="dashboard-sidebar">
             <div style="padding: 2rem; border-bottom: 1px solid var(--border-color);">
@@ -59,26 +59,28 @@
                     <div>
                         <h4 style="margin: 0;">John Smith</h4>
                         <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">Premium Member</p>
+                        <p style="margin: 0; color: var(--text-light); font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                     </div>
                 </div>
             </div>
             <ul class="sidebar-nav">
-                <li><a href="#overview" class="active">📊 Overview</a></li>
-                <li><a href="#favorites">❤️ Saved Properties</a></li>
-                <li><a href="#inquiries">💬 My Inquiries</a></li>
-                <li><a href="#viewings">👁️ Scheduled Viewings</a></li>
-                <li><a href="#documents">📄 Documents</a></li>
-                <li><a href="#preferences">⚙️ Preferences</a></li>
-                <li><a href="#profile">👤 Profile Settings</a></li>
+                <li><a href="#overview" class="active"><i class="fas fa-chart-bar" style="color: var(--primary);"></i> Overview</a></li>
+                <li><a href="#favorites"><i class="fas fa-heart" style="color: var(--primary);"></i> Saved Properties</a></li>
+                <li><a href="#inquiries"><i class="fas fa-comments" style="color: var(--primary);"></i> My Inquiries</a></li>
+                <li><a href="#viewings"><i class="fas fa-eye" style="color: var(--primary);"></i> Scheduled Viewings</a></li>
+                <li><a href="#documents"><i class="fas fa-file-alt" style="color: var(--primary);"></i> Documents</a></li>
+                <li><a href="#preferences"><i class="fas fa-cogs" style="color: var(--primary);"></i> Preferences</a></li>
+                <li><a href="#profile"><i class="fas fa-user" style="color: var(--primary);"></i> Profile Settings</a></li>
             </ul>
         </div>
 
         <div class="dashboard-content">
             <div style="background: var(--bg-white); padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="admin-container" style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
                         <h1>Welcome back, John!</h1>
                         <p>Here's what's happening with your property search</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
                     </div>
                     <button class="btn btn-primary">+ Save New Property</button>
                 </div>
@@ -117,7 +119,8 @@
                             <div class="property-info">
                                 <div class="property-price">$850,000</div>
                                 <h4 class="property-title">Modern Luxury Villa</h4>
-                                <div class="property-location">📍 Beverly Hills, CA</div>
+                                <div class="property-location"><i class="fas fa-map-marker-alt"></i> Beverly Hills, CA</div>
+                                <p>Lorem ipsum dolor sit amet.</p>
                                 <div class="property-features">
                                     <span class="feature">🛏️ 4 Beds</span>
                                     <span class="feature">🚿 3 Baths</span>
@@ -134,7 +137,8 @@
                             <div class="property-info">
                                 <div class="property-price">$3,200/month</div>
                                 <h4 class="property-title">Downtown Penthouse</h4>
-                                <div class="property-location">📍 Manhattan, NY</div>
+                                <div class="property-location"><i class="fas fa-map-marker-alt"></i> Manhattan, NY</div>
+                                <p>Lorem ipsum dolor sit amet.</p>
                                 <div class="property-features">
                                     <span class="feature">🛏️ 2 Beds</span>
                                     <span class="feature">🚿 2 Baths</span>
@@ -151,7 +155,8 @@
                             <div class="property-info">
                                 <div class="property-price">$2,500,000</div>
                                 <h4 class="property-title">Beachfront Mansion</h4>
-                                <div class="property-location">📍 Malibu, CA</div>
+                                <div class="property-location"><i class="fas fa-map-marker-alt"></i> Malibu, CA</div>
+                                <p>Lorem ipsum dolor sit amet.</p>
                                 <div class="property-features">
                                     <span class="feature">🛏️ 6 Beds</span>
                                     <span class="feature">🚿 5 Baths</span>
@@ -167,7 +172,7 @@
             </div>
 
             <!-- Recent Activity -->
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+            <div class="recent" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
                 <!-- Inquiries -->
                 <div class="card">
                     <div class="card-header">
@@ -179,7 +184,9 @@
                                 <div>
                                     <h5>Modern Luxury Villa</h5>
                                     <p style="color: var(--text-light); margin: 0.25rem 0;">Beverly Hills, CA • $850,000</p>
+                                    <p style="color: var(--text-light); margin: 0.25rem 0;">Lorem ipsum dolor sit amet.</p>
                                     <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Inquiry sent 2 days ago</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Lorem ipsum dolor sit amet.</p>
                                 </div>
                                 <span style="background: var(--warning-color); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.8rem;">Pending</span>
                             </div>
@@ -190,7 +197,9 @@
                                 <div>
                                     <h5>Downtown Penthouse</h5>
                                     <p style="color: var(--text-light); margin: 0.25rem 0;">Manhattan, NY • $3,200/month</p>
+                                    <p style="color: var(--text-light); margin: 0.25rem 0;">Lorem ipsum dolor sit amet.</p>
                                     <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Inquiry sent 5 days ago</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Lorem ipsum dolor sit amet.</p>
                                 </div>
                                 <span style="background: var(--success-color); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.8rem;">Responded</span>
                             </div>
@@ -201,7 +210,9 @@
                                 <div>
                                     <h5>Suburban Family Home</h5>
                                     <p style="color: var(--text-light); margin: 0.25rem 0;">Austin, TX • $425,000</p>
+                                    <p style="color: var(--text-light); margin: 0.25rem 0;">Lorem ipsum dolor sit amet.</p>
                                     <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Inquiry sent 1 week ago</p>
+                                    <p style="color: var(--text-light); font-size: 0.9rem; margin: 0;">Lorem ipsum dolor sit amet.</p>
                                 </div>
                                 <span style="background: var(--success-color); color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.8rem;">Responded</span>
                             </div>
@@ -218,21 +229,27 @@
                         <div style="margin-bottom: 1.5rem;">
                             <h5>Modern Luxury Villa</h5>
                             <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">📅 Tomorrow at 2:00 PM</p>
+                            <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                             <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">👨‍💼 Agent: Sarah Johnson</p>
+                            <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                             <button class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;">View Details</button>
                         </div>
 
                         <div style="margin-bottom: 1.5rem;">
                             <h5>Downtown Penthouse</h5>
                             <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">📅 Friday at 10:00 AM</p>
+                            <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                             <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">👨‍💼 Agent: Michael Chen</p>
+                            <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                             <button class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;">View Details</button>
                         </div>
 
                         <div>
                             <h5>Family Home</h5>
                             <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">📅 Saturday at 3:00 PM</p>
+                            <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                             <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">👨‍💼 Agent: Emma Rodriguez</p>
+                            <p style="color: var(--text-light); margin: 0.25rem 0; font-size: 0.9rem;">Lorem ipsum dolor sit amet.</p>
                             <button class="btn btn-secondary" style="width: 100%; margin-top: 0.5rem;">View Details</button>
                         </div>
                     </div>
@@ -249,18 +266,22 @@
                         <div>
                             <h5>Price Range</h5>
                             <p>$500,000 - $2,000,000</p>
+                        <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div>
                             <h5>Property Type</h5>
                             <p>House, Condo, Villa</p>
+                        <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div>
                             <h5>Preferred Locations</h5>
                             <p>Beverly Hills, Manhattan, Austin</p>
+                        <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div>
                             <h5>Bedrooms</h5>
                             <p>3+ bedrooms</p>
+                        <p>Lorem ipsum dolor sit amet.</p>
                         </div>
                     </div>
                     <button class="btn btn-primary mt-3">Update Preferences</button>

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .dashboard-header {
             background: var(--bg-white);
@@ -128,11 +129,11 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="container">
             <div class="navbar-container">
                 <a href="index.html" class="navbar-brand">
-                    🏡 PrimeEstate Admin
+                    <i class="fas fa-home"></i> PrimeEstate
                 </a>
                 
                 <ul class="navbar-nav">
@@ -141,8 +142,8 @@
                             Home <span class="dropdown-arrow">▼</span>
                         </a>
                         <div class="dropdown">
-                            <a href="index.html" class="dropdown-item">🏠 Classic Home</a>
-                            <a href="index2.html" class="dropdown-item">✨ Modern Home</a>
+                            <a href="index.html" class="dropdown-item">Home 1</a>
+                            <a href="index2.html" class="dropdown-item">Home 2</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
@@ -153,33 +154,29 @@
                             Dashboard <span class="dropdown-arrow">▼</span>
                         </a>
                         <div class="dropdown">
-                            <a href="user-dashboard.html" class="dropdown-item">👤 User Dashboard</a>
-                            <a href="admin-dashboard.html" class="dropdown-item">⚙️ Admin Dashboard</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="login.html" class="dropdown-item">🔐 Login</a>
-                            <a href="index.html" class="dropdown-item">🚪 Exit Admin</a>
+                            <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
+                            <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
                         </div>
                     </li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
                 </ul>
-                
                 <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
                 <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
     </nav>
-
     <!-- Dashboard -->
     <div class="dashboard">
         <div class="dashboard-sidebar">
             <ul class="sidebar-nav">
-                <li><a href="#overview" class="active">📊 Overview</a></li>
-                <li><a href="#properties">🏠 Properties</a></li>
-                <li><a href="#users">👥 Users</a></li>
-                <li><a href="#agents">👨‍💼 Agents</a></li>
-                <li><a href="#inquiries">💬 Inquiries</a></li>
-                <li><a href="#transactions">💰 Transactions</a></li>
-                <li><a href="#reports">📈 Reports</a></li>
-                <li><a href="#settings">⚙️ Settings</a></li>
+                <li><a href="#overview" class="active"><i class="fas fa-chart-bar" style="color: var(--primary);"></i> Overview</a></li>
+                <li><a href="#properties"><i class="fas fa-home" style="color: var(--primary);"></i> Properties</a></li>
+                <li><a href="#users"><i class="fas fa-users" style="color: var(--primary);"></i> Users</a></li>
+                <li><a href="#agents"><i class="fas fa-user-tie" style="color: var(--primary);"></i> Agents</a></li>
+                <li><a href="#inquiries"><i class="fas fa-comments" style="color: var(--primary);"></i> Inquiries</a></li>
+                <li><a href="#transactions"><i class="fas fa-dollar-sign" style="color: var(--primary);"></i> Transactions</a></li>
+                <li><a href="#reports"><i class="fas fa-chart-line" style="color: var(--primary);"></i> Reports</a></li>
+                <li><a href="#settings"><i class="fas fa-cogs" style="color: var(--primary);"></i> Settings</a></li>
             </ul>
         </div>
 
@@ -233,7 +230,7 @@
 
             <!-- Overview Tab -->
             <div id="overview" class="tab-panel active">
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <div class="admin-activity" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                     <div class="chart-container">
                         <div style="text-align: center;">
                             <h3>Sales Analytics</h3>

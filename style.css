@@ -820,7 +820,41 @@ p {
   .container {
     padding: 0 15px;
   }
+
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .card-header {
+    flex-direction: column;
+  }
+
+  .recent {
+    display: flex !important;
+    flex-direction: column;
+    gap: 4px;
+  }
   
+  .dashboard-content {
+    padding: 4px;
+  }
+
+  .tab-navigation {
+    overflow: scroll;
+  }
+
+  .chart-container {
+    display: none;
+  }
+
+  .admin-activity {
+    display: block !important;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+
   .navbar-nav {
     display: none;
     position: absolute;
