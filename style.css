@@ -821,6 +821,11 @@ p {
     padding: 0 15px;
   }
 
+  
+.hero-modern {
+    padding-top: 100px;
+  }
+
   .admin-container {
     flex-direction: column;
   }
