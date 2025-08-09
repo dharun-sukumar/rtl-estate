@@ -826,6 +826,11 @@ p {
     padding-top: 100px;
   }
 
+  .about-container {
+    display: flex !important;
+    flex-direction: column;
+  }
+
   .admin-container {
     flex-direction: column;
   }
