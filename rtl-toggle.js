@@ -89,7 +89,7 @@ const rtlStyles = `
 
 [dir="rtl"] .rtl-toggle {
     margin-right: 1rem;
-    margin-left: 0;
+    margin-left: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -100,7 +100,7 @@ const rtlStyles = `
     
     [dir="rtl"] .rtl-toggle {
         margin-right: 0.5rem;
-        margin-left: 0;
+        margin-left: 1rem;
     }
 }
 `;

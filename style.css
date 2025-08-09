@@ -222,6 +222,7 @@ p {
   font-weight: 500;
   transition: var(--transition);
   margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .rtl-toggle:hover {
