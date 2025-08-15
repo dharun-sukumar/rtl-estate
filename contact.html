@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-       <!-- Navigation -->
+   <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-container">
@@ -20,7 +20,8 @@
                     <i class="fas fa-home"></i> PrimeEstate
                 </a>
                 
-                <ul class="navbar-nav">
+                <!-- Desktop Navbar -->
+                <ul class="navbar-nav desktop-navbar">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             Home <span class="dropdown-arrow">▼</span>
@@ -46,7 +47,19 @@
                     </li>
                     <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
                 </ul>
-                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <!-- Mobile Navbar (no dropdowns, all links flat) -->
+                <ul class="navbar-nav mobile-navbar">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li class="nav-item"><a href="index2.html" class="nav-link">Home 2</a></li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="user-dashboard.html" class="nav-link">User Dashboard</a></li>
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link">Admin Dashboard</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
+                </ul>
+                <button class="rtl-toggle" aria-label="Toggle text direction"><i class="fas fa-globe"></i></button>
                 <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
@@ -111,38 +124,25 @@
                         <div class="card-body">
                             <h4>Get in Touch</h4>
                             <p style="margin-bottom: 2rem;">We're here to help you with all your real estate needs. Reach out to us through any of the following channels:</p>
-                            <p style="margin-bottom: 2rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
                             
                             <div style="margin-bottom: 1.5rem;">
                                 <h5><i class="fas fa-phone-alt" style="color: var(--primary);"></i> Phone</h5>
                                 <p>(555) 123-4567</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">Mon-Fri: 8:00 AM - 8:00 PM<br>Sat-Sun: 9:00 AM - 6:00 PM</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
 
                             <div style="margin-bottom: 1.5rem;">
                                 <h5><i class="fas fa-envelope" style="color: var(--primary);"></i> Email</h5>
                                 <p>info@primeestate.com</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">We respond within 24 hours</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
 
                             <div style="margin-bottom: 1.5rem;">
                                 <h5><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Office Location</h5>
                                 <p>123 Real Estate Avenue<br>Beverly Hills, CA 90210</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">Visit us for in-person consultations</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
 
                             <div>
                                 <h5><i class="fas fa-comments" style="color: var(--primary);"></i> Live Chat</h5>
                                 <p>Available on our website</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                                <p style="color: var(--text-light); font-size: 0.9rem;">Mon-Fri: 9:00 AM - 6:00 PM</p>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                         <p>Lorem ipsum dolor sit amet.</p>
                         <p><strong>📞 Phone:</strong> (555) 123-4567</p>
                         <p>Lorem ipsum dolor sit amet.</p>
-                        <p><strong>🕒 Hours:</strong><br>Mon-Fri: 8:00 AM - 8:00 PM<br>Sat-Sun: 9:00 AM - 6:00 PM</p>
+                        <p><strong><i class="fas fa-clock" style="color: var(--primary);"></i> Hours:</strong><br>Mon-Fri: 9:00 AM - 7:00 PM<br>Sat-Sun: 10:00 AM - 4:00 PM</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <a href="#" class="btn btn-secondary">Get Directions</a>
                     </div>
@@ -219,40 +219,77 @@
             </div>
 
             <div style="max-width: 800px; margin: 0 auto;">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5>How long does it typically take to sell a property?</h5>
-                        <p>The average time to sell a property varies by market conditions and property type. In our markets, luxury properties typically sell within 60-90 days, while standard residential properties average 30-45 days.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                <div class="faq-accordion" aria-label="FAQ Accordion">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long does it typically take to sell a property?</span>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" role="region">
+                            <p>The average time to sell a property varies by market conditions and property type. In our markets, luxury properties typically sell within 60-90 days, while standard residential properties average 30-45 days.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5>What are your commission rates?</h5>
-                        <p>Our commission structure varies based on property value and services required. We offer competitive rates and provide transparent pricing with no hidden fees. Contact us for a personalized quote.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What are your commission rates?</span>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" role="region">
+                            <p>Our commission structure varies based on property value and services required. We offer competitive rates and provide transparent pricing with no hidden fees. Contact us for a personalized quote.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5>Do you help with property management?</h5>
-                        <p>Yes, we offer comprehensive property management services including tenant screening, rent collection, maintenance coordination, and investment property optimization.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you help with property management?</span>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" role="region">
+                            <p>Yes, we offer comprehensive property management services including tenant screening, rent collection, maintenance coordination, and investment property optimization.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5>Can you help first-time buyers?</h5>
-                        <p>Absolutely! We specialize in guiding first-time buyers through the entire process, from pre-approval to closing. We provide education, support, and advocacy every step of the way.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can you help first-time buyers?</span>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" role="region">
+                            <p>Absolutely! We specialize in guiding first-time buyers through the entire process, from pre-approval to closing. We provide education, support, and advocacy every step of the way.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+             </div>
+         </div>
+     </section>
+    
+    <script>
+        // Simple FAQ accordion behaviour
+        (function(){
+            const items = document.querySelectorAll('.faq-accordion .faq-item');
+            items.forEach(item => {
+                const btn = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                btn.addEventListener('click', () => {
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    // collapse all
+                    items.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+                    if (!expanded) {
+                        item.classList.add('active');
+                        btn.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        })();
+    </script>
 
     <!-- CTA Section -->
     <section class="py-4">

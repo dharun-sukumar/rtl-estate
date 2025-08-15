@@ -1,3 +1,19 @@
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileNavbar = document.querySelector('.mobile-navbar');
+  if (mobileMenuBtn && mobileNavbar) {
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileNavbar.classList.toggle('active');
+    });
+    // Optional: Hide menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!mobileNavbar.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileNavbar.classList.remove('active');
+      }
+    });
+  }
+});
 // Main JavaScript for Real Estate Website
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle

@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function updateToggleText(direction) {
         if (rtlToggle) {
-            rtlToggle.textContent = direction === 'rtl' ? 'LTR' : 'RTL';
+            rtlToggle.innerHTML = '<i class="fas fa-globe"></i>';
             rtlToggle.setAttribute('aria-label', `Switch to ${direction === 'rtl' ? 'left-to-right' : 'right-to-left'} text direction`);
         }
     }

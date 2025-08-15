@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="navbar-container">
@@ -20,7 +20,8 @@
                     <i class="fas fa-home"></i> PrimeEstate
                 </a>
                 
-                <ul class="navbar-nav">
+                <!-- Desktop Navbar -->
+                <ul class="navbar-nav desktop-navbar">
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             Home <span class="dropdown-arrow">▼</span>
@@ -40,11 +41,25 @@
                         <div class="dropdown">
                             <a href="user-dashboard.html" class="dropdown-item">User Dashboard</a>
                             <a href="admin-dashboard.html" class="dropdown-item">Admin Dashboard</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="login.html" class="dropdown-item">Login</a>
                         </div>
                     </li>
                     <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
                 </ul>
-                <button class="rtl-toggle" aria-label="Toggle text direction">RTL</button>
+                <!-- Mobile Navbar (no dropdowns, all links flat) -->
+                <ul class="navbar-nav mobile-navbar">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home 1</a></li>
+                    <li class="nav-item"><a href="index2.html" class="nav-link">Home 2</a></li>
+                    <li class="nav-item"><a href="property-details.html" class="nav-link">Properties</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="user-dashboard.html" class="nav-link">User Dashboard</a></li>
+                    <li class="nav-item"><a href="admin-dashboard.html" class="nav-link">Admin Dashboard</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="login.html" class="nav-link">Sign In</a></li>
+                </ul>
+                <button class="rtl-toggle" aria-label="Toggle text direction"><i class="fas fa-globe"></i></button>
                 <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
